@@ -1,6 +1,6 @@
 import os, pickle
 
-import .MIA
+from . import MIA
 
 class Logger:
     """ It runs and logs metric during the training, including privacy risk for models """

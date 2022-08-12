@@ -3,7 +3,7 @@ import numpy as np
 
 from .utils import *
 from .user import *
-import .functools
+import functools
 
 def compute_modified_entropy(p, y, epsilon=0.00001):
     """ Computes label informed entropy from 'Systematic evaluation of privacy risks of machine learning models' USENIX21 """
