@@ -35,8 +35,8 @@ def w_fully_adv_init(W, mean, std, s):
 
     W.assign(_W)
     
-def invert_fully_g(gw, gb, i=None):
-    b = 1. / gb.numpy()[np.newaxis,:]
+def invert_fully_g(gw, gb, i=None, epsilon=0.00001):
+    b = 1. / (gb.numpy()[np.newaxis,:] + epsilon)
     w = gw.numpy().T
 
     if not i is None:
@@ -51,4 +51,3 @@ def normalize_img(x):
     x -= x.min()
     x /= x.max()
     return x
-
